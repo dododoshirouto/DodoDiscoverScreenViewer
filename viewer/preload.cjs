@@ -3,11 +3,11 @@ const { contextBridge, ipcRenderer } = require('electron');
 const fs = require('fs');
 const path = require('path');
 
-const jsonPath = path.join(__dirname, '..', 'discover_items.json');
-
 contextBridge.exposeInMainWorld('discoverAPI', {
-    load: () => {
-        try { return JSON.parse(fs.readFileSync(jsonPath, 'utf-8')); }
+    load: (config) => {
+        const devPath = path.join(process.cwd(), config.outJson);
+        const prodPath = path.join(process.resourcesPath, config.outJson);
+        try { return JSON.parse(fs.readFileSync(fs.existsSync(devPath) ? devPath : prodPath, 'utf-8')); }
         catch { return { items: [] }; }
     },
     fetch: (config) => ipcRenderer.invoke('fetch-discover', config)

@@ -109,7 +109,7 @@ ${item.source_img ? `<img class="fav" src="${item.source_img}" />` : ''}
 async function refetch() {
     let config = await window.configAPI.get()
     await window.discoverAPI.fetch(config);
-    data = window.discoverAPI.load();
+    data = window.discoverAPI.load(config);
     console.log("最新Discover:", data);
 }
 
