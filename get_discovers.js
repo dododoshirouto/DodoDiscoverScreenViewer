@@ -17,15 +17,17 @@ async function discovers_to_json(config) {
     const weather = await get_weather(config, page);
     console.log('discover_items', discover_items, weather);
 
-    page.close();
+    browser.close();
 
-    fs.writeFileSync(config.outJson, JSON.stringify({
+    const devPath = path.join(process.cwd(), config.outJson);
+    const prodPath = path.join(process.resourcesPath, config.outJson);
+
+    fs.writeFileSync(fs.existsSync(devPath) ? devPath : prodPath, JSON.stringify({
         fetchedAt: new Date().toISOString(),
         items: discover_items,
         weather,
     }, null, 2), 'utf-8');
 
-    browser.close();
 }
 
 async function open_browser_for_login(config, browser = null) {
@@ -138,7 +140,7 @@ async function open_google_com(config, is_no_automation = false, force_new = fal
         args: [
             // `--user-data-dir=${config.userDataDir}`,
             // `--profile-directory=${config.profileDirectory}`,
-            `--user-data-dir=${getConfigPath()}`,
+            `--user-data-dir=${config.userDataDir}`,
             '--profile-directory=Default',
             '--no-sandbox',
             // '--disable-gpu',
