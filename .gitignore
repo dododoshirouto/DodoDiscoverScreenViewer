@@ -1,4 +1,5 @@
 package-lock.json
 node_modules
 dist
-discorver_items.json
+discover_items.json
+chrome-profile
