@@ -1,0 +1,16 @@
+{
+    "chromeExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "userDataDir": "C:\\Users\\dodoneko\\AppData\\Local\\Google\\Chrome\\User Data",
+    "profileDirectory": "Default",
+    "headless": true,
+    "lang": "ja-JP,ja",
+    "googleUrl": "https://www.google.com/?hl=ja",
+    "useMobileUA": true,
+    "maxScrolls": 10,
+    "scrollPauseMs": 900,
+    "outJson": "./discover_items.json",
+    "outScreenshot": "./discover_full.png",
+    "clipEachCard": false,
+    "cardsDir": "./cards",
+    "timeoutMs": 60000
+}

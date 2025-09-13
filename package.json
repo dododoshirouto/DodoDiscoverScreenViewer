@@ -1,0 +1,33 @@
+{
+  "name": "dodo-discover-screen",
+  "version": "1.0.0",
+  "main": "viewer/main.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "npx electron viewer/main.mjs ",
+    "build": "electron-builder"
+  },
+  "author": "dododo-shirouto 2025 @super_amateur_c",
+  "license": "ISC",
+  "description": "Google Discover viewer.",
+  "dependencies": {
+    "puppeteer": "^24.20.0"
+  },
+  "sevDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "site.dodoneko.discoverscreenviewer",
+    "files": [
+      "viewer/**/*",
+      "get_discovers.js"
+    ],
+    "extraResources": [
+      "config.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+/* viewer/style.css */
+:root {
+    --fade: 2.5s;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    font-family: 'Google Sans', system-ui, -apple-system, "Noto Sans JP", sans-serif;
+}
+
+#stage {
+    position: fixed;
+    inset: 0;
+    display: block;
+}
+
+.card {
+    position: absolute;
+    inset: 0;
+}
+
+.card .bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(12vmin) brightness(1.2) contrast(1.4) saturate(1) brightness(0.6);
+    transform: scale(0.8);
+}
+
+.card .box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(900px, 86vw);
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title {
+    font-size: clamp(24px, 3.2vw, 44px);
+    line-height: 1.25;
+    margin: 0 0 12px;
+}
+
+.desc {
+    font-size: clamp(14px, 1.6vw, 18px);
+    opacity: .9;
+    margin: 0 0 16px;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: .85;
+}
+
+.fav {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+#shade {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    box-shadow: inset 0 0 220px 110px rgba(0, 0, 0, .75);
+}
+
+#hud {
+    position: fixed;
+    right: 9vh;
+    top: 3vh;
+    padding: 0.6em 4em;
+    font-size: 14px;
+    z-index: 999;
+}
+
+div#clock p {
+    margin: 0;
+}
+
+div#clock {
+    font-size: 9vh;
+    font-family: 'Google Sans';
+    font-weight: 500;
+    line-height: 1;
+}
+
+span#clock_daytext,
+span#clock_seconds {
+    font-size: 0.4em;
+    margin-left: 0.1em;
+}
+
+.card-appearance {
+    background: rgba(128, 128, 128, 0.25);
+    box-shadow: 0 20px 120px rgba(0, 0, 0, .7);
+    backdrop-filter: blur(14px);
+    border-radius: 24px;
+}
+
+img.thumbnail {
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    height: 100%;
+    border-radius: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.thumbnail-container {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.content {
+    flex-shrink: 1;
+    flex-grow: 1;
+}
