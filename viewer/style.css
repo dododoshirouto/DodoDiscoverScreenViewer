@@ -102,6 +102,10 @@ span#clock_seconds {
     margin-left: 0.1em;
 }
 
+span#clock_date {
+    font-size: 0.7em;
+}
+
 .card-appearance {
     background: rgba(128, 128, 128, 0.25);
     box-shadow: 0 20px 120px rgba(0, 0, 0, .7);
